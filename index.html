@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Manisa 💗</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;color:#fff;background:#0d0820;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+ overflow-x:hidden;
+}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:
+ radial-gradient(circle at 15% 15%,#ff9bd622,transparent 25%),
+ radial-gradient(circle at 85% 20%,#a995ff24,transparent 28%),
+ radial-gradient(circle at 50% 85%,#ff6fa514,transparent 30%),
+ linear-gradient(145deg,#0b0618,#28103c 52%,#090d25)}
+canvas{position:fixed;inset:0;z-index:-2;pointer-events:none}
+.noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;background:#09061555;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}
+.logo{font-weight:900;letter-spacing:2px;font-size:13px}.date{font-size:10px;letter-spacing:2px;border:1px solid #ffffff25;border-radius:999px;padding:8px 12px;background:#ffffff0b}
+section{min-height:100vh;display:grid;place-items:center;padding:90px 18px 50px}
+.wrap{width:min(820px,94vw);text-align:center}
+.glass{background:#ffffff0d;border:1px solid #ffffff18;border-radius:34px;backdrop-filter:blur(18px);box-shadow:0 30px 100px #0007}
+.hero{padding:65px 25px;position:relative;overflow:hidden}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:#ffffff0b;border:1px solid #ffffff16;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#ffffffaa}
+h1{font-size:clamp(56px,14vw,112px);line-height:.9;letter-spacing:-5px;margin:22px 0 18px}
+.gradient{background:linear-gradient(90deg,#fff,#ffc3e8,#cfc6ff,#fff);background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:250%}}
+.hero p{max-width:520px;margin:0 auto;color:#ffffffb5;font-size:17px;line-height:1.7}
+.btn{border:0;border-radius:999px;padding:15px 25px;margin:22px 5px 5px;font-weight:800;font-size:15px;cursor:pointer;color:#32112f;background:linear-gradient(100deg,#fff,#ffd9ef);box-shadow:0 12px 35px #0004;transition:.2s}
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+.tiny{font-size:10px;color:#ffffff55;margin-top:12px}
+.hidden{display:none!important}
+.content{padding:38px 20px}
+.kicker{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#ffffff77}
+h2{font-size:clamp(30px,7vw,52px);letter-spacing:-2px;margin:10px 0 15px}
+p{line-height:1.8;color:#ffffffb8;max-width:650px;margin:10px auto}
+.countTitle{font-size:11px;letter-spacing:1.5px;color:#ffffff66;margin:28px 0 12px}
+.count{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.unit{min-width:92px;padding:17px 10px;border-radius:20px;background:#00000020;border:1px solid #ffffff10}
+.unit b{display:block;font-size:31px}.unit span{font-size:9px;letter-spacing:2px;color:#ffffff66}
+.line{height:1px;background:linear-gradient(90deg,transparent,#ffffff25,transparent);margin:34px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.tile{padding:25px 12px;border-radius:23px;background:#ffffff08;border:1px solid #ffffff0d;transition:.25s}
+.tile:hover{transform:translateY(-6px);background:#ffffff0e}
+.icon{font-size:34px;display:block;margin-bottom:10px}.tile b{display:block;font-size:15px}.tile small{color:#ffffff60;line-height:1.5}
+.note{margin:25px auto;padding:28px 20px;border-radius:28px;background:linear-gradient(135deg,#ff9dcb12,#a99cff10);border:1px solid #ffffff12}
+.note .heart{font-size:48px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.secret{display:none;animation:appear .5s ease}.secret.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:none}}
+.signature{font-weight:800;color:#fff;margin-top:20px}
+footer{font-size:10px;color:#ffffff42;margin-top:28px}
+@media(max-width:600px){.grid{grid-template-columns:1fr 1fr}.hero{padding:52px 18px}h1{letter-spacing:-3px}.unit{min-width:76px}.content{padding:32px 15px}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.unit{min-width:70px}}
+
+.music-card{margin:26px auto;padding:25px 18px;border-radius:28px;background:linear-gradient(135deg,#ff9dcb12,#a99cff12);border:1px solid #ffffff12}
+.music-icon{font-size:44px}.music-card h3{font-size:24px;margin:6px 0}.music-card .sub{font-size:12px;color:#ffffff70}
+.audio-player{width:min(560px,100%);margin:18px auto 4px;filter:drop-shadow(0 10px 20px #0004)}
+
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div class="noise"></div>
+
+<nav><div class="logo">M ✦ M</div><div class="date">16 AUGUST 🎂</div></nav>
+
+<section id="home">
+ <div class="wrap">
+  <div class="glass hero">
+   <div class="pill">✨ a tiny surprise from Manav</div>
+   <h1>Hey,<br><span class="gradient">Manisa</span> 💗</h1>
+   <p>I made this little place for one very special birthday.<br>
+   No photos needed. Just good vibes, a few words, and a little surprise.</p>
+   <button class="btn" onclick="openApp()">Open your surprise 💌</button>
+   <div class="tiny">best viewed with the sound of silence and a smile :)</div>
+  </div>
+ </div>
+</section>
+
+<section id="app" class="hidden">
+ <div class="wrap glass content">
+  <div class="kicker">16 August • your day</div>
+  <h2>Happy Birthday, Manisa! 🎂</h2>
+  <p>
+   I hope today feels as lovely as the person it is celebrating.
+   May this year bring you more laughs, more beautiful memories,
+   and a lot of reasons to smile.
+  </p>
+
+  <div class="countTitle">COUNTING DOWN TO YOUR NEXT 16 AUGUST ✨</div>
+  <div class="count" id="count"></div>
+
+  
+<div class="music-card">
+  <div class="music-icon">🎵</div>
+  <div class="kicker">birthday soundtrack</div>
+  <h3>Nazar Na Lag Jaye 💗</h3>
+  <div class="sub">Press play when you want the surprise to continue.</div>
+  <audio class="audio-player" controls preload="metadata">
+    <source src="nazar-na-lag-jaye.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
+  </audio>
+</div>
+
+<div class="line"></div>
+
+  <div class="kicker">little things</div>
+  <h2 style="font-size:32px">Things that make you, you 🌷</h2>
+  <div class="grid">
+   <div class="tile"><span class="icon">😊</span><b>Your smile</b><small>The kind that makes a moment brighter.</small></div>
+   <div class="tile"><span class="icon">✨</span><b>Your eyes</b><small>Definitely one of your best features.</small></div>
+   <div class="tile"><span class="icon">🌸</span><b>Your hair</b><small>Part of that effortlessly cute vibe.</small></div>
+   <div class="tile"><span class="icon">🎀</span><b>Your vibe</b><small>Sweet, fun and completely you.</small></div>
+   <div class="tile"><span class="icon">💫</span><b>Your laugh</b><small>One of those sounds people remember.</small></div>
+   <div class="tile"><span class="icon">💗</span><b>Your presence</b><small>You make ordinary moments feel special.</small></div>
+  </div>
+
+  <div class="note">
+   <div class="heart">💗</div>
+   <div class="kicker">a little note</div>
+   <p>
+    Manisa, I genuinely hope you have an amazing birthday.
+    Keep smiling, keep being your cute self, and never forget how much
+    the people around you value you.
+   </p>
+   <div class="signature">— Manav ✨</div>
+  </div>
+
+  <button class="btn" onclick="secret()">There's one more thing 👀</button>
+
+  <div id="secret" class="secret note">
+   <div style="font-size:42px">🎉✨💗✨🎉</div>
+   <div class="kicker">surprise unlocked</div>
+   <h2 style="font-size:30px">Birthday mode: ON</h2>
+   <p>
+    Official instructions for today:<br>
+    Smile a lot. Eat cake. Make memories. Have fun. 🎂
+   </p>
+   <button class="btn" onclick="party()">MORE CONFETTI 🎊</button>
+  </div>
+
+  <footer>Made with ✨ by Manav • especially for Manisa</footer>
+ </div>
+</section>
+
+<script>
+const canvas=document.getElementById('bg'),ctx=canvas.getContext('2d');
+let W,H,stars=[];
+function resize(){W=canvas.width=innerWidth*devicePixelRatio;H=canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';stars=Array.from({length:90},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.7+.3,a:Math.random()}))}
+addEventListener('resize',resize);resize();
+function draw(){
+ ctx.clearRect(0,0,W,H);
+ stars.forEach(s=>{s.a+=.01;ctx.globalAlpha=.25+.25*Math.sin(s.a);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill()});
+ requestAnimationFrame(draw)
+}draw();
+
+function openApp(){
+ document.getElementById('app').classList.remove('hidden');
+ setTimeout(()=>document.getElementById('app').scrollIntoView({behavior:'smooth'}),80);
+ party();
+}
+function secret(){
+ document.getElementById('secret').classList.add('show');
+ document.getElementById('secret').scrollIntoView({behavior:'smooth',block:'center'});
+ party();
+}
+function party(){
+ for(let i=0;i<80;i++){
+  const e=document.createElement('div');e.textContent=['💗','✨','🎉','🌸','🎀','💫'][Math.floor(Math.random()*6)];
+  Object.assign(e.style,{position:'fixed',left:'50%',top:'45%',zIndex:99,fontSize:(14+Math.random()*18)+'px',pointerEvents:'none'});
+  document.body.appendChild(e);
+  const x=(Math.random()-.5)*innerWidth*.95,y=250+Math.random()*innerHeight*.7;
+  e.animate([{transform:'translate(-50%,-50%) scale(.5)',opacity:1},{transform:`translate(${x}px,${y}px) rotate(${Math.random()*900}deg)`,opacity:0}],{duration:1200+Math.random()*1100,easing:'cubic-bezier(.2,.8,.2,1)'}).onfinish=()=>e.remove();
+ }
+}
+function update(){
+ const now=new Date();let target=new Date(now.getFullYear(),7,16,0,0,0);
+ if(now>=target)target=new Date(now.getFullYear()+1,7,16,0,0,0);
+ let d=target-now,D=Math.floor(d/86400000);d%=86400000;
+ let Hh=Math.floor(d/3600000);d%=3600000;let M=Math.floor(d/60000);d%=60000;let S=Math.floor(d/1000);
+ document.getElementById('count').innerHTML=
+ `<div class="unit"><b>${D}</b><span>DAYS</span></div><div class="unit"><b>${Hh}</b><span>HOURS</span></div><div class="unit"><b>${M}</b><span>MINUTES</span></div><div class="unit"><b>${S}</b><span>SECONDS</span></div>`;
+}
+update();setInterval(update,1000);
+</script>
+</body>
+</html>
